@@ -2,6 +2,6 @@ package com.java.ee.domain;
 
 public enum MenuCategory {
 
-	BREAKFAST,LUNCH,DINNER;
+	STARTER, MAIN_COURSE, DESERT, DRINK;
 	
 }

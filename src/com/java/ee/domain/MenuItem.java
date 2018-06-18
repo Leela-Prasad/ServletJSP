@@ -50,6 +50,6 @@ public class MenuItem {
 	
 	@Override
 	public String toString() {
-		return this.name + " (" + this.price + ")";
+		return this.name + " " + description + " (" + this.price + ")";
 	}
 }
