@@ -14,6 +14,15 @@
 		<servlet-name>MenuSearchServlet</servlet-name>
 		<servlet-class>com.java.ee.servlet.MenuSearchServlet</servlet-class>
 	</servlet>
+	<servlet>
+		<servlet-name>OrderServlet</servlet-name>
+		<servlet-class>com.java.ee.servlet.OrderServlet</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>OrderReceivedServlet</servlet-name>
+		<servlet-class>com.java.ee.servlet.OrderReceivedServlet</servlet-class>
+	</servlet>
 	
 	<servlet-mapping>
 		<servlet-name>HelloServlet</servlet-name>
@@ -26,6 +35,14 @@
 	<servlet-mapping>
 		<servlet-name>MenuSearchServlet</servlet-name>
 		<url-pattern>/searchResults.html</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>OrderServlet</servlet-name>
+		<url-pattern>/order.html</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>OrderReceivedServlet</servlet-name>
+		<url-pattern>/orderReceived.html</url-pattern>
 	</servlet-mapping>
 	
   <welcome-file-list>
