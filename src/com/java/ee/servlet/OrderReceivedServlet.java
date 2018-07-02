@@ -1,7 +1,6 @@
 package com.java.ee.servlet;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -32,11 +31,6 @@ public class OrderReceivedServlet extends HttpServlet {
 			}
 		}
 		
-		PrintWriter out = response.getWriter();
-		response.setContentType("text/html");
-		out.println("<html><body><p>");
-		out.println("Total cost : " + totalCost);
-		out.println("</p></body></html>");
-		out.close();
+		response.sendRedirect("thankYou.html?total=" + totalCost);
 	}
 }
