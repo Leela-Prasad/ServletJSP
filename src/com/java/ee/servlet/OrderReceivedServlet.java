@@ -7,6 +7,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.java.ee.domain.MenuItem;
 import com.java.ee.service.MenuDataService;
@@ -30,7 +31,8 @@ public class OrderReceivedServlet extends HttpServlet {
 				}
 			}
 		}
-		
-		response.sendRedirect("thankYou.html?total=" + totalCost);
+		HttpSession session = request.getSession();
+		session.setAttribute("total", totalCost);
+		response.sendRedirect("thankYou.html");
 	}
 }
