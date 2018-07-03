@@ -33,6 +33,9 @@ public class OrderReceivedServlet extends HttpServlet {
 		}
 		HttpSession session = request.getSession();
 		session.setAttribute("total", totalCost);
-		response.sendRedirect("thankYou.html");
+		
+		String redirectUrl = "thankYou.html";
+		redirectUrl = response.encodeRedirectURL(redirectUrl);
+		response.sendRedirect(redirectUrl);
 	}
 }
