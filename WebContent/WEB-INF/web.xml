@@ -106,8 +106,11 @@
 	
 	<!-- Authentication Type -->
 	<login-config>
-		<auth-method>BASIC</auth-method>
-		<realm-name>Restaurent Application</realm-name>
+		<auth-method>FORM</auth-method>
+		<form-login-config>
+			<form-login-page>/login.html</form-login-page>
+			<form-error-page>/login-failed.html</form-error-page>
+		</form-login-config>
 	</login-config>
 	<!-- Authentication Type ends here -->
 	
