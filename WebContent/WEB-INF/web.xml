@@ -57,6 +57,60 @@
 	<session-config>
 		<session-timeout>1</session-timeout>
 	</session-config>
+	
+	<!-- Listing Roles that exist 
+		 in the system.This is generally 
+		 not required in tomcat but needed in 
+		 other webservers. 
+	-->
+	 <security-role>
+		<role-name>user</role-name>
+	</security-role>
+	
+	<security-role>
+		<role-name>admin</role-name>
+	</security-role> 
+	<!-- Listing Roles ends -->
+	
+	<!-- authorization 
+		This security-constraint tag will map the 
+		resources to a specific role in the system.
+		example:
+		/order.html and /thankYou.html 
+		is mapped to user role,so any one login with 
+		others roles cannot access above 2 resources.
+	-->
+	<security-constraint>
+		<web-resource-collection>
+			<web-resource-name>orders page</web-resource-name>
+			<url-pattern>/order.html</url-pattern>
+			<url-pattern>/thankYou.html</url-pattern>
+		</web-resource-collection>
+		
+		<auth-constraint>
+			<role-name>user</role-name>
+		</auth-constraint>
+	</security-constraint>
+	
+	<security-constraint>
+		<web-resource-collection>
+			<web-resource-name>staff pages</web-resource-name>
+			<url-pattern>/admin/*</url-pattern>
+		</web-resource-collection>
+		
+		<auth-constraint>
+			<role-name>admin</role-name>
+		</auth-constraint>
+	</security-constraint>
+	<!-- authorization ends -->
+	
+	<!-- Authentication Type -->
+	<login-config>
+		<auth-method>BASIC</auth-method>
+		<realm-name>Restaurent Application</realm-name>
+	</login-config>
+	<!-- Authentication Type ends here -->
+	
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
     <welcome-file>index.htm</welcome-file>
