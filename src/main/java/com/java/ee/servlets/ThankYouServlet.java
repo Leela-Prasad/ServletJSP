@@ -1,8 +1,9 @@
 package com.java.ee.servlets;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
 import javax.servlet.annotation.HttpConstraint;
 import javax.servlet.annotation.ServletSecurity;
 import javax.servlet.annotation.WebServlet;
@@ -17,7 +18,7 @@ public class ThankYouServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 	
-	public void doGet (HttpServletRequest request, HttpServletResponse response) throws IOException {
+	public void doGet (HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 		
 		
 		HttpSession session = request.getSession();
@@ -27,18 +28,11 @@ public class ThankYouServlet extends HttpServlet {
 			response.sendRedirect("/order.html");
 			return;
 		}
-		
-		
-		PrintWriter out = response.getWriter();
-		response.setContentType("text/html");
 
-		out.println("<html><body><h1>Ricky's Restaurant</h1>");
-		out.println("<h2>Order your food</h2>");
+		request.setAttribute("total", total);
 		
-		out.println("Thank you - your order has been received. You need to pay $" + total);
-				
-		out.println("</body></html>");
-		out.close();
+		RequestDispatcher dispatcher = request.getRequestDispatcher("ThankYou.jsp");
+		dispatcher.forward(request, response);
 		
 	}
 }
