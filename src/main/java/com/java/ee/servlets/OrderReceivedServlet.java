@@ -45,7 +45,7 @@ public class OrderReceivedServlet extends HttpServlet {
 		Double total = menuDao.getOrderTotal(order.getId());
 		
 		HttpSession session = request.getSession();
-		session.setAttribute("total", total);
+		session.setAttribute("order", order);
 		
 		String redirectUrl = "/thankYou.html";
 		redirectUrl = response.encodeURL(redirectUrl);
