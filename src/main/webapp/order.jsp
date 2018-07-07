@@ -1,3 +1,4 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
@@ -10,24 +11,20 @@
 <title>Order Page</title>
 </head>
 <body>
-	<%@ include file="header.jsp" %>
+	<jsp:include page="header.jsp" />
 	<h1>Ricky's Restaurant</h1>
 	<h2>Order your food</h2>
 	
-	<%
-		List<MenuItem> menuItems = (List<MenuItem>)request.getAttribute("menuItems");
-	%>
 	<form action='orderReceived.html' method='POST' >
 		<ul>
-			<% for(MenuItem menuItem : menuItems) { %>
-				
-				<li><%=menuItem %> <input type='text' name='item_<%=menuItem.getId() %>' /></li>
-			
-			<%  } %>
-			
+			<c:forEach items="${menuItems}" var="menuItem" >
+				<li>
+					${menuItem} <input type='text' name='item_${menuItem.id}' />
+				</li>
+			</c:forEach>
 		</ul>
 		<input type='submit' />
 	</form>
-	<%@ include file="footer.jsp" %>
+	<jsp:include page="footer.jsp" />
 </body>
 </html>

@@ -30,6 +30,7 @@ public class ThankYouServlet extends HttpServlet {
 		}
 
 		request.setAttribute("total", total);
+		request.setAttribute("currencyCode", "USD");
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher("ThankYou.jsp");
 		dispatcher.forward(request, response);
