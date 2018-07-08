@@ -21,5 +21,7 @@
   <classpathentry kind="var" path="M2_REPO/org/apache/tomcat/tomcat-util-scan/8.0.28/tomcat-util-scan-8.0.28.jar" sourcepath="M2_REPO/org/apache/tomcat/tomcat-util-scan/8.0.28/tomcat-util-scan-8.0.28-sources.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/apache/tomcat/tomcat-util/8.0.28/tomcat-util-8.0.28.jar" sourcepath="M2_REPO/org/apache/tomcat/tomcat-util/8.0.28/tomcat-util-8.0.28-sources.jar"/>
   <classpathentry kind="var" path="M2_REPO/com/h2database/h2/1.4.196/h2-1.4.196.jar" sourcepath="M2_REPO/com/h2database/h2/1.4.196/h2-1.4.196-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/json/json/20170516/json-20170516.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/json/json/20170516/json-20170516.jar" sourcepath="M2_REPO/org/json/json/20170516/json-20170516-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/apache/tomcat/tomcat-websocket/8.0.28/tomcat-websocket-8.0.28.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/apache/tomcat/tomcat-websocket-api/8.0.28/tomcat-websocket-api-8.0.28.jar"/>
 </classpath>

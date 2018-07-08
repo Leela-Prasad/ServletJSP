@@ -11,6 +11,7 @@ import javax.servlet.http.HttpSession;
 import com.java.ee.data.MenuDao;
 import com.java.ee.data.MenuDaoFactory;
 import com.java.ee.domain.Order;
+import com.java.ee.websockets.KitchenDisplaySessionHandler;
 
 @WebServlet("/orderReceived.html")
 public class OrderReceivedServlet extends HttpServlet {
@@ -40,6 +41,8 @@ public class OrderReceivedServlet extends HttpServlet {
 			  
 		}
 		
+		KitchenDisplaySessionHandler handler = KitchenDisplaySessionHandler.getHandler();
+		handler.newOrder(order);
 		System.out.println("A new order has been received.");
 		
 		Double total = menuDao.getOrderTotal(order.getId());
